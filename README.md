@@ -58,3 +58,5 @@ The `useState` hook is a fundamental part of React for managing component-level 
 - It also tracks the calculated BMI value and category.
 
 Refer to the [React useState documentation](https://react.dev/reference/react/useState) for more details.
+
+You can find the working app at [https://kajaani-balabavan.github.io/BMI-calculator/]
