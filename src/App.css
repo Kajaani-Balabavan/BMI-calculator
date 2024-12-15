@@ -14,23 +14,30 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px; /* Add padding for smaller screens */
 }
 
 .bmi-calculator {
-  width: 800px;
-  height: 500px;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
+  flex-direction: column; /* Default to column for smaller screens */
 }
 
 .box {
-  width: 350px;
+  width: 100%;
+  height: 200px;
   background-image: url(assets/doctor.jpg);
   background-repeat: no-repeat;
   background-position: center center;
+  background-size: cover;
+  border-radius: 8px;
+  margin-bottom: 20px; /* Space for stacked layout */
 }
 
 .data {
@@ -39,12 +46,12 @@ body {
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 600;
   margin-bottom: 20px;
-  padding: 10px 10px;
   text-transform: uppercase;
   color: #2980b9;
+  text-align: center; /* Center-align for smaller screens */
 }
 
 .input-container {
@@ -62,7 +69,7 @@ input {
   border: 1px solid #ccc;
   border-radius: 5px;
   outline: none;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 button {
@@ -90,7 +97,7 @@ button:hover {
 }
 
 .result p {
-  margin-bottom: 10px 0;
+  margin-bottom: 10px;
   font-weight: bold;
   color: #888;
 }
@@ -102,7 +109,7 @@ button:hover {
 
 .error {
   color: red;
-  font-size: 14px;
+  font-size: 12px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -110,4 +117,41 @@ button:hover {
 .data button:nth-of-type(2) {
   background-color: #e74c3c;
   margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .bmi-calculator {
+    flex-direction: row; /* Use row layout for larger screens */
+    height: 500px;
+  }
+
+  .box {
+    width: 350px;
+    height: auto; /* Adjust height for row layout */
+    margin-bottom: 0; /* Remove margin for side-by-side layout */
+  }
+
+  .data {
+    padding: 20px 40px; /* Extra padding for larger screens */
+  }
+
+  h1 {
+    font-size: 30px; /* Larger font size for bigger screens */
+    text-align: left; /* Align text to the left */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px; /* Smaller font size for very small screens */
+  }
+
+  input {
+    font-size: 14px; /* Adjust input font size */
+  }
+
+  button {
+    font-size: 16px; /* Adjust button font size */
+  }
 }

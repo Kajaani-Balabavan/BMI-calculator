@@ -27,7 +27,7 @@ function App() {
     } else {
       setBmi(null);
       setBmiStatus("");
-      setError("Please enter valid numeric vallues for height and weight");
+      setError("Please enter valid values for height and weight");
       setTimeout(() => {
         setError("");
       }, 5000);
